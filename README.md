@@ -11,6 +11,7 @@ This console application allows users to manage Courses, Faculties, Batches, and
 
 ## 📂 Project Structure
 
+```text
 ClassMgtSystemProject
 │
 ├── src
@@ -28,6 +29,7 @@ ClassMgtSystemProject
 │   │
 │   └── com.classmgt.serviceimple
 │       └── ClassMgtServiceImple.java
+```
 
 ## ▶ How to Run
 
