@@ -34,9 +34,5 @@ public class Faculty {
 	public String toString() {
 		return "Faculty [fid = " + fid + ", fname = " + fname + ", course = " + course + "]";
 	}
-	
-	
-	
-
 
 }

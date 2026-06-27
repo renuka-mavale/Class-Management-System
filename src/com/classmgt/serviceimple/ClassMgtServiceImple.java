@@ -89,22 +89,91 @@ public class ClassMgtServiceImple implements ClassMgtService {
 
 	@Override
 	public void addBatch() {
-		
 
+		System.out.println("Enter in which batch you want to enroll");
+		int n = sc.nextInt();
+
+		System.out.println("Enter Batch Deatils");
+		for (int i = 1; i <= n; i++) {
+			Batch batch = new Batch();
+
+			System.out.println("Enter Batch Id:");
+			int batchid = sc.nextInt();
+			batch.setBid(batchid);
+
+			System.out.println("Enter Batch Name: ");
+			batch.setBname(sc.next());
+
+			displayCourse();
+			System.out.println("Enter Course Id: ");
+			int cid = sc.nextInt();
+
+			for (Course co : clist) {
+				if (cid == co.getCid()) {
+					co.setCid(cid);
+					batch.setCourse(co);
+				}
+			}
+
+			blist.add(batch);
+		}
+		System.out.println("Batch Added Successfully");
 	}
 
 	@Override
 	public void displayBatch() {
+
+		System.out.println("===== Batch Details ======");
+
+		for (Batch batchlist : blist) {
+			System.out.println(batchlist);
+		}
 
 	}
 
 	@Override
 	public void addStudent() {
 
+		System.out.println("Enter how many students to add: ");
+		int n = sc.nextInt();
+		System.out.println("-- Enter Student Details --");
+
+		for (int i = 1; i <= n; i++) {
+			Student student = new Student();
+
+			System.out.println("Enter Student Id: ");
+			int stud_id = sc.nextInt();
+			student.setSid(stud_id);
+
+			System.out.println("Enter Student Name: ");
+			student.setSname(sc.next());
+
+			displayBatch();
+
+			System.out.println("Enter Batch Id: ");
+			int batchid = sc.nextInt();
+
+			for (Batch batchlist : blist) {
+				if(batchid == batchlist.getBid()) {
+					batchlist.setBid(batchid);
+					student.setBatch(batchlist);
+				}				
+			}
+
+			slist.add(student);
+		}
+
+		System.out.println("Student Added Successfully !!!");
 	}
 
 	@Override
 	public void displayStudent() {
+
+		System.out.println("===== Student Details =====");
+
+		for (Student stud : slist) {
+			System.out.println(stud);
+		}
 
 	}
 

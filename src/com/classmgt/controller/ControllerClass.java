@@ -42,7 +42,7 @@ public class ControllerClass {
 			case 2:
 				classmgtserviceimple.displayCourse();
 				break;
-				
+
 			case 3:
 				classmgtserviceimple.addFaculty();
 				break;
